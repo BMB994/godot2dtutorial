@@ -57,7 +57,7 @@ script = ExtResource("1_1qmh0")
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_pcqmr")
 animation = &"fly"
-frame_progress = 0.957529
+frame_progress = 0.00485971
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
