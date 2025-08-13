@@ -3,6 +3,11 @@ extends CanvasLayer
 # Notifies `Main` node that the button has been pressed
 signal start_game
 
+func _process(float):
+	if Input.is_action_pressed("start") && $StartButton.visible:
+		$StartButton.hide()
+		start_game.emit()
+		
 func show_message(text):
 	$Message.text = text
 	$Message.show()
