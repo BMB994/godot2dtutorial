@@ -58,6 +58,6 @@ func _on_start_timer_timeout():
 	$ScoreTimer.start()
 	$ObamnaTimer.start()
 
-
+# Adding timer to play Obamna noise every 3 seconds.
 func _on_obamna_timer_timeout():
 	$ObamnaSound.play()
