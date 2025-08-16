@@ -8,6 +8,7 @@ func game_over():
 	$HUD.show_game_over()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$ObamnaTimer.stop()
 	$Music.stop()
 	$DeathSound.play()
 
@@ -55,3 +56,8 @@ func _on_score_timer_timeout():
 func _on_start_timer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start()
+	$ObamnaTimer.start()
+
+
+func _on_obamna_timer_timeout():
+	$ObamnaSound.play()

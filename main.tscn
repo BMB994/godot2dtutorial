@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://do77qqbgyallg"]
+[gd_scene load_steps=10 format=3 uid="uid://do77qqbgyallg"]
 
 [ext_resource type="Script" uid="uid://cpa4nydtdmtco" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bp5qbp7ong46j" path="res://mob.tscn" id="2_0xm2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwlntt0opia8" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://bj4i3xm8yvbl7" path="res://art/House In a Forest Loop.ogg" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://dijv0whgyuj4q" path="res://art/gameover.wav" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://c2vw25x81nfxp" path="res://art/obamna.mp3" id="8_5vw27"]
 
 [sub_resource type="Curve2D" id="Curve2D_7dm0k"]
 _data = {
@@ -53,8 +54,15 @@ parameters/looping = true
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_272bh")
 
+[node name="ObamnaSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5vw27")
+
+[node name="ObamnaTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="ObamnaTimer" to="." method="_on_obamna_timer_timeout"]
